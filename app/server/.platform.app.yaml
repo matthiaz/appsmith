@@ -1,0 +1,14 @@
+# .platform.app.yaml
+
+name: app
+type: "java:11"
+disk: 1024
+hooks:
+    build: ./build.sh -DskipTests
+web:
+    commands:
+        start: java -jar -Dspring.profiles.active=$env server-1.0-SNAPSHOT.jar
+        
+relationships:
+    mongo: "mongodb:mongo"
+    redis: "cacheredis:redis"

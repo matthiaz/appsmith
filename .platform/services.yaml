@@ -1,0 +1,5 @@
+cacheredis:
+    type: redis:6.0
+    
+mongodb:
+    type: mongo:3.6
